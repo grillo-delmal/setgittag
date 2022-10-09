@@ -99,21 +99,21 @@ if ! git check-ref-format tags/$1; then
     exit 1
 fi
 
-if [ -d ".git" -a ! "$REMOVE" = "1" ] ; then 
+if [ -e ".git" -a ! "$REMOVE" = "1" ] ; then 
     echo "Error: A git repository already exists in this folder."
     exit 1 
 fi
 
 # Erase if configured to do so
 
-if [ -d ".git" -a "$REMOVE" = "1" ] ; then
+if [ -e ".git" -a "$REMOVE" = "1" ] ; then
     if [ "$FORCE" = "1" ]; then
         rm -rf ./.git
     else
         rm -rI ./.git
     fi
 
-    if [ -d ".git" ]; then
+    if [ -e ".git" ]; then
         exit 1
     fi
 fi
