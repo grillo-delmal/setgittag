@@ -164,9 +164,9 @@ EOF
     echo "${COMMIT}" > .git/HEAD
 else
     git init &> /dev/null
+    git config user.email "a@a.a"
+    git config user.name "a"
     git \
-        -c user.name='a' \
-        -c user.email='a' \
         commit \
             --allow-empty \
             -m 'a' &> /dev/null
