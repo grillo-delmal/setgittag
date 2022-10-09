@@ -1,5 +1,5 @@
 Name:           setgittag
-Version:        0.1.0
+Version:        0.1.1
 Release:        %autorelease
 Summary:        Sets a git tag to the current folder
 
